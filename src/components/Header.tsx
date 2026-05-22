@@ -1,10 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import { Upload, Workflow, Info, ShieldCheck } from 'lucide-react';
+import { Upload, Info, ShieldCheck } from 'lucide-react';
 
 const NAV_ITEMS = [
-  { to: '/',         label: 'Upload',   icon: Upload   },
-  { to: '/workflow', label: 'Workflow', icon: Workflow },
-  { to: '/about',    label: 'About',    icon: Info     },
+  { to: '/',      label: 'Upload', icon: Upload },
+  { to: '/about', label: 'About',  icon: Info   },
 ] as const;
 
 export default function Header() {

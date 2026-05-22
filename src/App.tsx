@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Header       from './components/Header';
-import UploadPage   from './pages/UploadPage';
-import WorkflowPage from './pages/WorkflowPage';
-import AboutPage    from './pages/AboutPage';
+import Header     from './components/Header';
+import UploadPage from './pages/UploadPage';
+import AboutPage  from './pages/AboutPage';
 
 export default function App() {
   return (
@@ -12,10 +11,9 @@ export default function App() {
         <main className="flex-1 w-full">
           <div className="max-w-6xl mx-auto px-6 py-10">
             <Routes>
-              <Route path="/"         element={<UploadPage />}   />
-              <Route path="/workflow" element={<WorkflowPage />} />
-              <Route path="/about"    element={<AboutPage />}    />
-              <Route path="*"         element={<Navigate to="/" />} />
+              <Route path="/"      element={<UploadPage />} />
+              <Route path="/about" element={<AboutPage />}  />
+              <Route path="*"      element={<Navigate to="/" />} />
             </Routes>
           </div>
         </main>
