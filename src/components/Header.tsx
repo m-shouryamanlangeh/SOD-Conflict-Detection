@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Upload, Info, ShieldCheck } from 'lucide-react';
+import { Upload, Info } from 'lucide-react';
 
 const NAV_ITEMS = [
   { to: '/',      label: 'Upload', icon: Upload },
@@ -12,10 +12,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center h-16 gap-8">
 
-          <a href="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#00BAF2] to-[#002970] flex items-center justify-center shadow-sm">
-              <ShieldCheck size={18} className="text-white" />
-            </div>
+          <a href="/" className="flex items-center shrink-0">
             <div className="leading-tight">
               <div className="text-[15px] font-semibold text-[#002970] tracking-tight">SAP SoD Analyzer</div>
               <div className="text-[10.5px] text-slate-400 font-medium uppercase tracking-[0.12em]">IT Internal Audit</div>
