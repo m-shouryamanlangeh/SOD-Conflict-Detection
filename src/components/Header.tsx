@@ -12,7 +12,13 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center h-16 gap-8">
 
-          <a href="/" className="flex items-center shrink-0">
+          <a href="/" className="flex items-center gap-3 shrink-0">
+            <img
+              src="/paytm-logo.svg"
+              alt="Paytm"
+              className="h-6 w-auto"
+            />
+            <div className="h-7 w-px bg-slate-200" aria-hidden="true" />
             <div className="leading-tight">
               <div className="text-[15px] font-semibold text-[#002970] tracking-tight">SAP SoD Analyzer</div>
               <div className="text-[10.5px] text-slate-400 font-medium uppercase tracking-[0.12em]">IT Internal Audit</div>
