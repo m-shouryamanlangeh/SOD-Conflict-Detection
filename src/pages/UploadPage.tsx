@@ -223,7 +223,7 @@ export default function UploadPage() {
             rule set and email back the intra-role and inter-role conflict reports.
           </p>
         </div>
-        <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e0f4fc] text-[12px] font-medium text-[#002970] dark:text-slate-100 border border-[#00BAF2]/30">
+        <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e0f4fc] dark:bg-[#00BAF2]/10 text-[12px] font-medium text-[#002970] dark:text-[#00BAF2] border border-[#00BAF2]/30">
           <span className="w-1.5 h-1.5 rounded-full bg-[#00BAF2]" />
           Live workflow
         </div>
@@ -285,8 +285,8 @@ export default function UploadPage() {
                   </label>
                 ) : (
                   <div className="flex items-center gap-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50/60 dark:bg-slate-800/30 px-4 py-3">
-                    <div className="w-9 h-9 rounded-md bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0">
-                      <FileSpreadsheet size={16} className="text-emerald-600" />
+                    <div className="w-9 h-9 rounded-md bg-emerald-50 dark:bg-emerald-500/15 border border-emerald-200 dark:border-emerald-500/30 flex items-center justify-center shrink-0">
+                      <FileSpreadsheet size={16} className="text-emerald-600 dark:text-emerald-400" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-[13px] font-medium text-[#002970] dark:text-slate-100 truncate">{file.name}</p>
@@ -295,7 +295,7 @@ export default function UploadPage() {
                     <button
                       type="button"
                       onClick={() => { setFile(null); if (fileInputRef.current) fileInputRef.current.value = ''; }}
-                      className="p-1.5 rounded-md text-slate-400 hover:text-rose-500 hover:bg-rose-50 transition-colors"
+                      className="p-1.5 rounded-md text-slate-400 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-500/10 transition-colors"
                       aria-label="Remove file"
                     >
                       <X size={14} />
@@ -336,8 +336,8 @@ export default function UploadPage() {
                           key={r}
                           className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[11.5px] font-medium border ${
                             bad
-                              ? 'bg-rose-50 text-rose-700 border-rose-200'
-                              : 'bg-[#e0f4fc] text-[#002970] dark:text-slate-100 border-[#00BAF2]/30'
+                              ? 'bg-rose-50 dark:bg-rose-500/10 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-500/30'
+                              : 'bg-[#e0f4fc] dark:bg-[#00BAF2]/10 text-[#002970] dark:text-[#00BAF2] border-[#00BAF2]/30'
                           }`}
                         >
                           {bad && <AlertCircle size={10} className="text-rose-500" />}
@@ -356,9 +356,9 @@ export default function UploadPage() {
               </div>
 
               {error && (
-                <div className="flex gap-2.5 items-start rounded-lg border border-rose-200 bg-rose-50 px-3.5 py-3">
+                <div className="flex gap-2.5 items-start rounded-lg border border-rose-200 dark:border-rose-500/30 bg-rose-50 dark:bg-rose-500/10 px-3.5 py-3">
                   <AlertCircle size={14} className="text-rose-500 mt-0.5 shrink-0" />
-                  <p className="text-[12.5px] text-rose-700 leading-relaxed break-words">{error}</p>
+                  <p className="text-[12.5px] text-rose-700 dark:text-rose-300 leading-relaxed break-words">{error}</p>
                 </div>
               )}
             </div>
@@ -395,14 +395,14 @@ export default function UploadPage() {
           {loading && <Progress step={step} />}
 
           {done && !loading && (
-            <div className="rounded-xl border border-emerald-200 bg-emerald-50/80 overflow-hidden">
+            <div className="rounded-xl border border-emerald-200 dark:border-emerald-500/30 bg-emerald-50/80 dark:bg-emerald-500/10 overflow-hidden">
               <div className="px-5 py-4 flex items-start gap-3">
                 <div className="w-9 h-9 rounded-full bg-emerald-500 flex items-center justify-center shrink-0 shadow-sm">
                   <CheckCircle2 size={16} className="text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[14px] font-semibold text-emerald-800">Submission accepted</p>
-                  <p className="text-[12px] text-emerald-700/90 mt-1 leading-relaxed break-words">{done.message}</p>
+                  <p className="text-[14px] font-semibold text-emerald-800 dark:text-emerald-200">Submission accepted</p>
+                  <p className="text-[12px] text-emerald-700/90 dark:text-emerald-300/90 mt-1 leading-relaxed break-words">{done.message}</p>
                 </div>
               </div>
             </div>

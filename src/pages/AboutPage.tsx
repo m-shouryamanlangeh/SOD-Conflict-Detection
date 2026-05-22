@@ -83,7 +83,7 @@ export default function AboutPage() {
         <div className="divide-y divide-slate-100 dark:divide-slate-800">
           {FIELDS.map(({ icon: Icon, name, type, description }) => (
             <div key={name} className="px-6 py-4 flex items-start gap-4">
-              <div className="w-9 h-9 rounded-md bg-[#e0f4fc] border border-[#00BAF2]/30 flex items-center justify-center shrink-0">
+              <div className="w-9 h-9 rounded-md bg-[#e0f4fc] dark:bg-[#00BAF2]/10 border border-[#00BAF2]/30 flex items-center justify-center shrink-0">
                 <Icon size={15} className="text-[#00BAF2]" />
               </div>
               <div className="flex-1 min-w-0">
@@ -113,7 +113,7 @@ export default function AboutPage() {
                 const Icon = s.icon;
                 return (
                   <div key={i} className="flex gap-4 relative">
-                    <div className="w-10 h-10 rounded-full bg-white border-2 border-[#00BAF2]/30 flex items-center justify-center shrink-0 z-10 shadow-sm">
+                    <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border-2 border-[#00BAF2]/30 flex items-center justify-center shrink-0 z-10 shadow-sm">
                       <Icon size={15} className="text-[#00BAF2]" />
                     </div>
                     <div className="flex-1 min-w-0 pt-1">
