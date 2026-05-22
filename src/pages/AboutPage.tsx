@@ -62,7 +62,7 @@ export default function AboutPage() {
     <div className="space-y-8">
 
       <div>
-        <h1 className="text-2xl font-semibold text-[#002970] tracking-tight">About</h1>
+        <h1 className="text-2xl font-semibold text-[#002970] dark:text-slate-100 tracking-tight">About</h1>
         <p className="text-sm text-slate-500 mt-1.5 max-w-2xl">
           SOD Conflict Detection scans an SAP user-role export against a configurable
           Segregation-of-Duties rule set and emails the conflict report to a recipient
@@ -71,16 +71,16 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
-        <div className="px-6 py-4 border-b border-slate-100">
-          <h2 className="text-[13px] font-semibold text-[#002970] uppercase tracking-[0.08em]">
+      <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+        <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+          <h2 className="text-[13px] font-semibold text-[#002970] dark:text-slate-100 uppercase tracking-[0.08em]">
             Form parameters
           </h2>
           <p className="text-xs text-slate-400 mt-0.5">
             What the upload form sends to the workflow.
           </p>
         </div>
-        <div className="divide-y divide-slate-100">
+        <div className="divide-y divide-slate-100 dark:divide-slate-800">
           {FIELDS.map(({ icon: Icon, name, type, description }) => (
             <div key={name} className="px-6 py-4 flex items-start gap-4">
               <div className="w-9 h-9 rounded-md bg-[#e0f4fc] border border-[#00BAF2]/30 flex items-center justify-center shrink-0">
@@ -88,7 +88,7 @@ export default function AboutPage() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-baseline gap-2 flex-wrap">
-                  <code className="text-[13px] font-mono font-semibold text-[#002970]">{name}</code>
+                  <code className="text-[13px] font-mono font-semibold text-[#002970] dark:text-slate-100">{name}</code>
                   <span className="text-[11px] text-slate-400">{type}</span>
                 </div>
                 <p className="text-[12.5px] text-slate-500 mt-1 leading-relaxed">{description}</p>
@@ -98,16 +98,16 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
-        <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
-          <h2 className="text-[13px] font-semibold text-[#002970] uppercase tracking-[0.08em]">
+      <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+        <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <h2 className="text-[13px] font-semibold text-[#002970] dark:text-slate-100 uppercase tracking-[0.08em]">
             How it works
           </h2>
           <span className="text-[11px] text-slate-400">{STEPS.length} stages</span>
         </div>
         <div className="px-6 py-6">
           <div className="relative">
-            <div className="absolute left-[19px] top-3 bottom-3 w-px bg-slate-200" />
+            <div className="absolute left-[19px] top-3 bottom-3 w-px bg-slate-200 dark:bg-slate-700" />
             <div className="space-y-5">
               {STEPS.map((s, i) => {
                 const Icon = s.icon;
@@ -117,7 +117,7 @@ export default function AboutPage() {
                       <Icon size={15} className="text-[#00BAF2]" />
                     </div>
                     <div className="flex-1 min-w-0 pt-1">
-                      <p className="text-[13.5px] font-semibold text-[#002970]">
+                      <p className="text-[13.5px] font-semibold text-[#002970] dark:text-slate-100">
                         <span className="text-slate-400 font-mono mr-1.5 text-[11px]">{String(i + 1).padStart(2, '0')}</span>
                         {s.title}
                       </p>
@@ -131,22 +131,22 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
-        <div className="px-6 py-4 border-b border-slate-100">
-          <h2 className="text-[13px] font-semibold text-[#002970] uppercase tracking-[0.08em]">
+      <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+        <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+          <h2 className="text-[13px] font-semibold text-[#002970] dark:text-slate-100 uppercase tracking-[0.08em]">
             Two kinds of conflicts
           </h2>
         </div>
         <div className="px-6 py-5 space-y-4 text-[13px] text-slate-600 leading-relaxed">
           <div>
-            <p className="font-semibold text-[#002970]">Intra-role conflict</p>
+            <p className="font-semibold text-[#002970] dark:text-slate-100">Intra-role conflict</p>
             <p className="mt-1">
               A single SAP role contains both T-codes named by a rule. The user only
               needs that one role to violate the rule.
             </p>
           </div>
           <div>
-            <p className="font-semibold text-[#002970]">Inter-role conflict</p>
+            <p className="font-semibold text-[#002970] dark:text-slate-100">Inter-role conflict</p>
             <p className="mt-1">
               The two conflicting T-codes live in different roles, but the same user is
               assigned both — so the user violates the rule by combination.

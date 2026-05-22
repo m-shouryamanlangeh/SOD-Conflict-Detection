@@ -37,16 +37,16 @@ function Progress({ step }: { step: number }) {
   const pct = Math.round(((step + 1) / STEPS.length) * 100);
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
-      <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-gradient-to-r from-slate-50 to-white">
+    <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm">
+      <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-gradient-to-r from-slate-50 to-white dark:from-slate-800/40 dark:to-slate-900">
         <div className="flex items-center gap-2.5">
           <Loader2 size={15} className="text-[#00BAF2] animate-spin" />
-          <span className="text-sm font-semibold text-[#002970]">Processing submission</span>
+          <span className="text-sm font-semibold text-[#002970] dark:text-slate-100">Processing submission</span>
         </div>
         <span className="text-xs font-semibold text-[#00BAF2] tabular-nums">{pct}%</span>
       </div>
 
-      <div className="h-1 bg-slate-100">
+      <div className="h-1 bg-slate-100 dark:bg-slate-800">
         <div
           className="h-1 bg-gradient-to-r from-[#00BAF2] to-[#002970] transition-all duration-700 ease-out"
           style={{ width: `${pct}%` }}
@@ -64,9 +64,9 @@ function Progress({ step }: { step: number }) {
               return (
                 <div key={i} className="flex items-center gap-3 relative">
                   <div className={`w-[31px] h-[31px] rounded-full flex items-center justify-center shrink-0 z-10 transition-all duration-300 ${
-                    done   ? 'bg-emerald-500 ring-4 ring-emerald-100' :
+                    done   ? 'bg-emerald-500 ring-4 ring-emerald-100 dark:ring-emerald-900/40' :
                     active ? 'bg-[#00BAF2] ring-4 ring-[#00BAF2]/15' :
-                             'bg-white border border-slate-200'
+                             'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700'
                   }`}>
                     {done   ? <CheckCircle2 size={14} className="text-white" /> :
                      active ? <Loader2 size={14} className="text-white animate-spin" /> :
@@ -75,7 +75,7 @@ function Progress({ step }: { step: number }) {
                   <div className="flex-1 min-w-0">
                     <p className={`text-[13px] font-medium transition-colors ${
                       done   ? 'text-emerald-600' :
-                      active ? 'text-[#002970]' :
+                      active ? 'text-[#002970] dark:text-slate-100' :
                                'text-slate-400'
                     }`}>{s.label}</p>
                     {active && (
@@ -91,7 +91,7 @@ function Progress({ step }: { step: number }) {
         </div>
       </div>
 
-      <div className="px-6 py-3 border-t border-slate-100 bg-slate-50/50 flex items-center gap-2 text-[11px] text-slate-400">
+      <div className="px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 flex items-center gap-2 text-[11px] text-slate-400">
         <Clock size={11} />
         <span>Average runtime is 15–45 seconds. Please don't close this tab.</span>
       </div>
@@ -215,7 +215,7 @@ export default function UploadPage() {
       {/* Page hero */}
       <div className="flex items-start justify-between gap-6">
         <div>
-          <h1 className="text-2xl font-semibold text-[#002970] tracking-tight">
+          <h1 className="text-2xl font-semibold text-[#002970] dark:text-slate-100 tracking-tight">
             Segregation of Duties Analysis
           </h1>
           <p className="text-sm text-slate-500 mt-1.5 max-w-xl">
@@ -223,7 +223,7 @@ export default function UploadPage() {
             rule set and email back the intra-role and inter-role conflict reports.
           </p>
         </div>
-        <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e0f4fc] text-[12px] font-medium text-[#002970] border border-[#00BAF2]/30">
+        <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e0f4fc] text-[12px] font-medium text-[#002970] dark:text-slate-100 border border-[#00BAF2]/30">
           <span className="w-1.5 h-1.5 rounded-full bg-[#00BAF2]" />
           Live workflow
         </div>
@@ -235,10 +235,10 @@ export default function UploadPage() {
         <div className="space-y-6">
 
           <form onSubmit={handleSubmit}
-                className="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+                className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
 
-            <div className="px-6 py-4 border-b border-slate-100">
-              <h2 className="text-[13px] font-semibold text-[#002970] uppercase tracking-[0.08em]">
+            <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+              <h2 className="text-[13px] font-semibold text-[#002970] dark:text-slate-100 uppercase tracking-[0.08em]">
                 Submission
               </h2>
               <p className="text-xs text-slate-400 mt-0.5">
@@ -262,14 +262,14 @@ export default function UploadPage() {
                     onDrop={onDrop}
                     className={`flex flex-col items-center justify-center gap-2 cursor-pointer rounded-lg border-2 border-dashed px-4 py-10 transition-colors ${
                       dragging
-                        ? 'border-[#00BAF2] bg-[#e0f4fc]/60'
-                        : 'border-slate-200 bg-slate-50/60 hover:border-[#00BAF2] hover:bg-[#e0f4fc]/30'
+                        ? 'border-[#00BAF2] bg-[#e0f4fc]/60 dark:bg-[#00BAF2]/10'
+                        : 'border-slate-200 dark:border-slate-700 bg-slate-50/60 dark:bg-slate-800/30 hover:border-[#00BAF2] hover:bg-[#e0f4fc]/30 dark:hover:bg-[#00BAF2]/10'
                     }`}
                   >
                     <div className="w-10 h-10 rounded-full bg-[#00BAF2]/10 flex items-center justify-center mb-1">
                       <Upload size={18} className="text-[#00BAF2]" />
                     </div>
-                    <p className="text-[13px] text-[#002970] font-medium">
+                    <p className="text-[13px] text-[#002970] dark:text-slate-100 font-medium">
                       Drop the workbook here, or <span className="text-[#00BAF2] underline-offset-2 hover:underline">browse</span>
                     </p>
                     <p className="text-[11px] text-slate-400">
@@ -284,12 +284,12 @@ export default function UploadPage() {
                     />
                   </label>
                 ) : (
-                  <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50/60 px-4 py-3">
+                  <div className="flex items-center gap-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50/60 dark:bg-slate-800/30 px-4 py-3">
                     <div className="w-9 h-9 rounded-md bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0">
                       <FileSpreadsheet size={16} className="text-emerald-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-[13px] font-medium text-[#002970] truncate">{file.name}</p>
+                      <p className="text-[13px] font-medium text-[#002970] dark:text-slate-100 truncate">{file.name}</p>
                       <p className="text-[11px] text-slate-400 tabular-nums">{formatBytes(file.size)}</p>
                     </div>
                     <button
@@ -323,7 +323,7 @@ export default function UploadPage() {
                     value={sendTo}
                     onChange={e => setSendTo(e.target.value)}
                     placeholder="alice@company.com, bob@company.com"
-                    className="w-full bg-white border border-slate-200 rounded-lg pl-9 pr-3 h-10 text-[13px] text-[#002970] placeholder-slate-400 focus:outline-none focus:border-[#00BAF2] focus:ring-2 focus:ring-[#00BAF2]/20 transition-all"
+                    className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg pl-9 pr-3 h-10 text-[13px] text-[#002970] dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-[#00BAF2] focus:ring-2 focus:ring-[#00BAF2]/20 transition-all"
                   />
                 </div>
 
@@ -337,7 +337,7 @@ export default function UploadPage() {
                           className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[11.5px] font-medium border ${
                             bad
                               ? 'bg-rose-50 text-rose-700 border-rose-200'
-                              : 'bg-[#e0f4fc] text-[#002970] border-[#00BAF2]/30'
+                              : 'bg-[#e0f4fc] text-[#002970] dark:text-slate-100 border-[#00BAF2]/30'
                           }`}
                         >
                           {bad && <AlertCircle size={10} className="text-rose-500" />}
@@ -364,7 +364,7 @@ export default function UploadPage() {
             </div>
 
             {/* Footer / actions */}
-            <div className="px-6 py-4 border-t border-slate-100 bg-slate-50/60 flex items-center justify-between gap-3">
+            <div className="px-6 py-4 border-t border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/30 flex items-center justify-between gap-3">
               <p className="text-[11px] text-slate-400">
                 {file && recipients.length > 0 && invalid.length === 0
                   ? <>Ready to submit <span className="font-mono text-slate-500">{file.name}</span> to <span className="font-medium text-slate-500">{recipients.length}</span> recipient{recipients.length === 1 ? '' : 's'}</>
@@ -375,7 +375,7 @@ export default function UploadPage() {
                   <button
                     type="button"
                     onClick={reset}
-                    className="px-3.5 h-9 text-[13px] font-medium text-slate-600 hover:text-[#002970] hover:bg-slate-200/70 rounded-md transition-colors"
+                    className="px-3.5 h-9 text-[13px] font-medium text-slate-600 hover:text-[#002970] dark:text-slate-100 hover:bg-slate-200/70 rounded-md transition-colors"
                   >
                     Clear
                   </button>
@@ -412,10 +412,10 @@ export default function UploadPage() {
         {/* ── Sidebar ───────────────────────────────────────────────── */}
         <aside className="space-y-4">
 
-          <div className="rounded-xl border border-slate-200 bg-white shadow-sm p-5">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm p-5">
             <div className="flex items-center gap-2 mb-3">
               <ListChecks size={14} className="text-[#00BAF2]" />
-              <h3 className="text-[12px] font-semibold text-[#002970] uppercase tracking-[0.08em]">
+              <h3 className="text-[12px] font-semibold text-[#002970] dark:text-slate-100 uppercase tracking-[0.08em]">
                 What you'll get
               </h3>
             </div>
@@ -428,7 +428,7 @@ export default function UploadPage() {
                 <li key={t} className="flex gap-2.5">
                   <CheckCircle2 size={13} className="text-emerald-500 mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-[12.5px] font-medium text-[#002970] leading-tight">{t}</p>
+                    <p className="text-[12.5px] font-medium text-[#002970] dark:text-slate-100 leading-tight">{t}</p>
                     <p className="text-[11px] text-slate-400 mt-0.5 leading-snug">{d}</p>
                   </div>
                 </li>
@@ -436,10 +436,10 @@ export default function UploadPage() {
             </ul>
           </div>
 
-          <div className="rounded-xl border border-slate-200 bg-white shadow-sm p-5">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm p-5">
             <div className="flex items-center gap-2 mb-3">
               <ShieldAlert size={14} className="text-amber-500" />
-              <h3 className="text-[12px] font-semibold text-[#002970] uppercase tracking-[0.08em]">
+              <h3 className="text-[12px] font-semibold text-[#002970] dark:text-slate-100 uppercase tracking-[0.08em]">
                 Before you submit
               </h3>
             </div>

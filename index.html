@@ -11,6 +11,15 @@
       href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap"
     />
     <title>SAP SoD Analyzer</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
