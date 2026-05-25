@@ -1,10 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import { Upload, Info, Sun, Moon } from 'lucide-react';
+import { Info, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../lib/useTheme';
 
 const NAV_ITEMS = [
-  { to: '/',      label: 'Upload', icon: Upload },
-  { to: '/about', label: 'About',  icon: Info   },
+  { to: '/about', label: 'About', icon: Info },
 ] as const;
 
 export default function Header() {
@@ -16,17 +15,12 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center h-16 gap-8">
 
-          <a href="/" className="flex items-center gap-3 shrink-0 -my-px">
+          <a href="/" className="flex items-center shrink-0" aria-label="Home">
             <img
               src="/paytm-logo.svg"
               alt="Paytm"
               className="h-7 w-auto block dark:brightness-0 dark:invert"
             />
-            <div className="h-8 w-px bg-slate-200 dark:bg-slate-700" aria-hidden="true" />
-            <div className="leading-tight">
-              <div className="text-[15px] font-semibold text-[#002970] dark:text-slate-100 tracking-tight">SAP SoD Analyzer</div>
-              <div className="text-[10.5px] text-slate-400 dark:text-slate-500 font-medium uppercase tracking-[0.12em]">IT Internal Audit</div>
-            </div>
           </a>
 
           <nav className="flex items-center gap-1 flex-1">
@@ -34,7 +28,6 @@ export default function Header() {
               <NavLink
                 key={to}
                 to={to}
-                end={to === '/'}
                 className={({ isActive }) =>
                   `flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[13px] font-medium transition-colors ${
                     isActive
