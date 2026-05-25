@@ -444,7 +444,12 @@ export default function UploadPage() {
               </h3>
             </div>
             <ul className="space-y-2 text-[12px] text-slate-500 leading-relaxed">
-              <li>• Workbook must contain a single sheet with the three expected columns.</li>
+              <li>
+                • Workbook must contain a single sheet with the three expected columns:{' '}
+                <span className="font-mono text-slate-600 dark:text-slate-300">User Name</span>,{' '}
+                <span className="font-mono text-slate-600 dark:text-slate-300">Role Name</span>,{' '}
+                <span className="font-mono text-slate-600 dark:text-slate-300">T.Code</span>.
+              </li>
               <li>• Submissions are processed asynchronously by n8n.</li>
               <li>• Use a distribution list as recipient if multiple reviewers need the report.</li>
             </ul>
